@@ -68,3 +68,20 @@ let g:loaded_showmarks = 1
 "-----------------------------------------------------------------------------
 " Yup, I don't like this one either
 let loaded_minibufexplorer = 1
+
+"-----------------------------------------------------------------------------
+" Set up the window colors and size
+"-----------------------------------------------------------------------------
+if has("gui_running")
+    colorscheme xoria256
+    if !exists("g:vimrcloaded")
+        winpos 0 0
+        if ! &diff
+            winsize 130 90
+        else
+            winsize 227 90
+        endif
+        let g:vimrcloaded = 1
+    endif
+endif
+:nohls
