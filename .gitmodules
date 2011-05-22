@@ -7,3 +7,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-preview"]
+	path = bundle/vim-preview
+	url = git://github.com/greyblake/vim-preview.git
