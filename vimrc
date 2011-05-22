@@ -51,3 +51,9 @@ endfunction
 command! -complete=customlist,ListKnownSnippetLanguageTypes
          \ -nargs=? RS call ReloadSnippets("<args>")
 
+"-----------------------------------------------------------------------------
+" FuzzyFinder Settings
+"-----------------------------------------------------------------------------
+nmap ,fb :FuzzyFinderBuffer<CR>
+nmap ,ff :FuzzyFinderFile<CR>
+nmap ,ft :FuzzyFinderTag<CR>
