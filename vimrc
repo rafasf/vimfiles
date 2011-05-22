@@ -62,3 +62,9 @@ nmap ,ft :FuzzyFinderTag<CR>
 " ShowMarks Plugin Stuff
 "-----------------------------------------------------------------------------
 let g:loaded_showmarks = 1
+
+"-----------------------------------------------------------------------------
+" MiniBufExplorer Plugin Settings
+"-----------------------------------------------------------------------------
+" Yup, I don't like this one either
+let loaded_minibufexplorer = 1

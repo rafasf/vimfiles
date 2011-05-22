@@ -22,3 +22,6 @@
 [submodule "bundle/showmarks"]
 	path = bundle/showmarks
 	url = git://github.com/vim-scripts/ShowMarks.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = git://github.com/fholgado/minibufexpl.vim.git
