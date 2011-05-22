@@ -57,3 +57,8 @@ command! -complete=customlist,ListKnownSnippetLanguageTypes
 nmap ,fb :FuzzyFinderBuffer<CR>
 nmap ,ff :FuzzyFinderFile<CR>
 nmap ,ft :FuzzyFinderTag<CR>
+
+"-----------------------------------------------------------------------------
+" ShowMarks Plugin Stuff
+"-----------------------------------------------------------------------------
+let g:loaded_showmarks = 1
