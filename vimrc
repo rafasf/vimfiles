@@ -1,5 +1,8 @@
 call pathogen#runtime_append_all_bundles()
 
+" Set background to dark -- better visualization on terminal
+set background=dark
+
 " Set filetype stuff to on
 filetype on
 filetype plugin on
@@ -302,6 +305,11 @@ endfunction
 
 command! -complete=customlist,ListKnownSnippetLanguageTypes
          \ -nargs=? RS call ReloadSnippets("<args>")
+
+"-----------------------------------------------------------------------------
+" CommandT Settings
+"-----------------------------------------------------------------------------
+nmap ,t :CommandT<CR>
 
 "-----------------------------------------------------------------------------
 " FuzzyFinder Settings
