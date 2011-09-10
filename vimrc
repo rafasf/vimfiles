@@ -1,5 +1,12 @@
 call pathogen#runtime_append_all_bundles()
 
+set nowrap
+set number
+
+" Tabstops are 4 spaces
+set tabstop=4
+set shiftwidth=4
+
 " Set background to dark -- better visualization on terminal
 set background=dark
 
@@ -7,10 +14,6 @@ set background=dark
 filetype on
 filetype plugin on
 filetype indent on
-
-" Tabstops are 4 spaces
-set tabstop=4
-set shiftwidth=4
 
 " set the search scan to wrap lines
 set wrapscan
