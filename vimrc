@@ -1,4 +1,8 @@
+set nocompatible
+
 call pathogen#runtime_append_all_bundles()
+
+filetype off
 
 set nowrap
 set number
