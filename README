@@ -1,1 +1,9 @@
+The vimfiles that make my life easier!
 
+vimrc from Derek Wyatt (with very few changes)
+
+How to setup:
+
+Create link to the vimrc: ln -s .vim/vimrc ~/.vimrc
+Initialize plugins: git submodule --init
+Make command-t: at bundle/command-t run "rake make"
