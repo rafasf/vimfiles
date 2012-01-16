@@ -164,18 +164,6 @@ nmap <silent> <leader>n :set invhls<CR>:set hls?<CR>
 nmap <silent> <leader>vi
      \ ovim:set ts=4 sts=4 sw=4:<CR>vim600:fdm=marker fdl=1 fdc=0:<ESC>
 
-" Show all available VIM servers
-nmap <silent> <leader>ss :echo serverlist()<CR>
-
-" The following beast is something i didn't write... it will return the
-" syntax highlighting group that the current "thing" under the cursor
-" belongs to -- very useful for figuring out what to change as far as
-" syntax highlighting goes.
-nmap <silent> <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
-     \ . '> trans<' . synIDattr(synID(line(".")<leader>col("."),0),"name")
-     \ . "> lo<" . synIDattr(synIDtrans(synID(line(".")<leader>col("."),1)),"name")
-     \ . ">"<CR>
-
 " set text wrapping toggles
 nmap <silent> <leader>w :set invwrap<CR>:set wrap?<CR>
 
@@ -322,13 +310,6 @@ command! -complete=customlist,ListKnownSnippetLanguageTypes
 " CommandT Settings
 "-----------------------------------------------------------------------------
 nmap <leader>t :CommandT<CR>
-
-"-----------------------------------------------------------------------------
-" FuzzyFinder Settings
-"-----------------------------------------------------------------------------
-nmap <leader>fb :FuzzyFinderBuffer<CR>
-nmap <leader>ff :FuzzyFinderFile<CR>
-nmap <leader>ft :FuzzyFinderTag<CR>
 
 "-----------------------------------------------------------------------------
 " ShowMarks Plugin Stuff
