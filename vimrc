@@ -1,5 +1,7 @@
 set nocompatible
 
+" Pathogen magic
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#runtime_append_all_bundles()
 
 filetype off
@@ -396,6 +398,7 @@ iab Fone      Phone
 " Set up the window colors and size
 "-----------------------------------------------------------------------------
 if has("gui_running")
+    set guifont=Monaco:h12
     colorscheme xoria256
     if !exists("g:vimrcloaded")
         winpos 0 0
