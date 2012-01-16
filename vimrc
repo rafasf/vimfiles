@@ -147,37 +147,40 @@ set tags=./tags,tags
 " Let the syntax highlighting for Java files allow cpp keywords
 let java_allow_cpp_keywords = 1
 
+" Change leader key to comma
+let mapleader="," 
+
 " Toggle paste mode
-nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
+nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
 
 " cd to the directory containing the file in the buffer
-nmap <silent> ,cd :lcd %:h<CR>
-nmap <silent> ,md :!mkdir -p %:p:h<CR>
+nmap <silent> <leader>cd :lcd %:h<CR>
+nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
 " Turn off that stupid highlight search
-nmap <silent> ,n :set invhls<CR>:set hls?<CR>
+nmap <silent> <leader>n :set invhls<CR>:set hls?<CR>
 
 " put the vim directives for my file editing settings in
-nmap <silent> ,vi
+nmap <silent> <leader>vi
      \ ovim:set ts=4 sts=4 sw=4:<CR>vim600:fdm=marker fdl=1 fdc=0:<ESC>
 
 " Show all available VIM servers
-nmap <silent> ,ss :echo serverlist()<CR>
+nmap <silent> <leader>ss :echo serverlist()<CR>
 
 " The following beast is something i didn't write... it will return the
 " syntax highlighting group that the current "thing" under the cursor
 " belongs to -- very useful for figuring out what to change as far as
 " syntax highlighting goes.
 nmap <silent> <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
-     \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
-     \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
+     \ . '> trans<' . synIDattr(synID(line(".")<leader>col("."),0),"name")
+     \ . "> lo<" . synIDattr(synIDtrans(synID(line(".")<leader>col("."),1)),"name")
      \ . ">"<CR>
 
 " set text wrapping toggles
-nmap <silent> ,w :set invwrap<CR>:set wrap?<CR>
+nmap <silent> <leader>w :set invwrap<CR>:set wrap?<CR>
 
 " Run the command that was just yanked
-nmap <silent> ,rc :@"<cr>
+nmap <silent> <leader>rc :@"<cr>
 
 " allow command line editing like emacs
 cnoremap <C-A>      <Home>
@@ -193,26 +196,26 @@ cnoremap <ESC><C-F> <S-Right>
 cnoremap <ESC><C-H> <C-W>
 
 " Maps to make handling windows a bit easier
-noremap <silent> ,h :wincmd h<CR>
-noremap <silent> ,j :wincmd j<CR>
-noremap <silent> ,k :wincmd k<CR>
-noremap <silent> ,l :wincmd l<CR>
-noremap <silent> ,sb :wincmd p<CR>
+noremap <silent> <leader>h :wincmd h<CR>
+noremap <silent> <leader>j :wincmd j<CR>
+noremap <silent> <leader>k :wincmd k<CR>
+noremap <silent> <leader>l :wincmd l<CR>
+noremap <silent> <leader>sb :wincmd p<CR>
 noremap <silent> <C-F9>  :vertical resize -10<CR>
 noremap <silent> <C-F10> :resize +10<CR>
 noremap <silent> <C-F11> :resize -10<CR>
 noremap <silent> <C-F12> :vertical resize +10<CR>
-noremap <silent> ,s8 :vertical resize 83<CR>
-noremap <silent> ,cj :wincmd j<CR>:close<CR>
-noremap <silent> ,ck :wincmd k<CR>:close<CR>
-noremap <silent> ,ch :wincmd h<CR>:close<CR>
-noremap <silent> ,cl :wincmd l<CR>:close<CR>
-noremap <silent> ,cc :close<CR>
-noremap <silent> ,cw :cclose<CR>
-noremap <silent> ,ml <C-W>L
-noremap <silent> ,mk <C-W>K
-noremap <silent> ,mh <C-W>H
-noremap <silent> ,mj <C-W>J
+noremap <silent> <leader>s8 :vertical resize 83<CR>
+noremap <silent> <leader>cj :wincmd j<CR>:close<CR>
+noremap <silent> <leader>ck :wincmd k<CR>:close<CR>
+noremap <silent> <leader>ch :wincmd h<CR>:close<CR>
+noremap <silent> <leader>cl :wincmd l<CR>:close<CR>
+noremap <silent> <leader>cc :close<CR>
+noremap <silent> <leader>cw :cclose<CR>
+noremap <silent> <leader>ml <C-W>L
+noremap <silent> <leader>mk <C-W>K
+noremap <silent> <leader>mh <C-W>H
+noremap <silent> <leader>mj <C-W>J
 noremap <silent> <C-7> <C-W>>
 noremap <silent> <C-8> <C-W>+
 noremap <silent> <C-9> <C-W>+
@@ -223,11 +226,11 @@ nnoremap <c-e> ,
 vnoremap <c-e> ,
 
 " Buffer commands
-noremap <silent> ,bd :bd<CR>
+noremap <silent> <leader>bd :bd<CR>
 
 " Edit the vimrc file
-nmap <silent> ,ev :e $MYVIMRC<CR>
-nmap <silent> ,sv :so $MYVIMRC<CR>
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Make horizontal scrolling easier
 nmap <silent> <C-o> 10zl
@@ -238,25 +241,25 @@ nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
 
 " Search the current file for what's currently in the search
 " register and display matches
-nmap <silent> ,gs
+nmap <silent> <leader>gs
      \ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
 
 " Search the current file for the word under the cursor and display matches
-nmap <silent> ,gw
+nmap <silent> <leader>gw
      \ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
 
 " Search the current file for the WORD under the cursor and display matches
-nmap <silent> ,gW
+nmap <silent> <leader>gW
      \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
 
 " Swap two words
 nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Underline the current line with '='
-nmap <silent> ,ul :t.\|s/./=/g\|set nohls<cr>
+nmap <silent> <leader>ul :t.\|s/./=/g\|set nohls<cr>
 
 " Delete all buffers
-nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
+nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
 
 " Syntax coloring lines that are too long just slows down the world
 set synmaxcol=2048
@@ -318,14 +321,14 @@ command! -complete=customlist,ListKnownSnippetLanguageTypes
 "-----------------------------------------------------------------------------
 " CommandT Settings
 "-----------------------------------------------------------------------------
-nmap ,t :CommandT<CR>
+nmap <leader>t :CommandT<CR>
 
 "-----------------------------------------------------------------------------
 " FuzzyFinder Settings
 "-----------------------------------------------------------------------------
-nmap ,fb :FuzzyFinderBuffer<CR>
-nmap ,ff :FuzzyFinderFile<CR>
-nmap ,ft :FuzzyFinderTag<CR>
+nmap <leader>fb :FuzzyFinderBuffer<CR>
+nmap <leader>ff :FuzzyFinderFile<CR>
+nmap <leader>ft :FuzzyFinderTag<CR>
 
 "-----------------------------------------------------------------------------
 " ShowMarks Plugin Stuff
