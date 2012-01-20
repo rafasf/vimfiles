@@ -383,7 +383,7 @@ iab Fone      Phone
 "-----------------------------------------------------------------------------
 if has("gui_running")
     set guifont=Monaco:h13
-    colorscheme xoria256
+    colorscheme solarized
     if !exists("g:vimrcloaded")
         winpos 0 0
         if ! &diff
