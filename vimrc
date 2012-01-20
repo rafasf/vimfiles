@@ -382,7 +382,7 @@ iab Fone      Phone
 " Set up the window colors and size
 "-----------------------------------------------------------------------------
 if has("gui_running")
-    set guifont=Monaco:h12
+    set guifont=Monaco:h13
     colorscheme xoria256
     if !exists("g:vimrcloaded")
         winpos 0 0
