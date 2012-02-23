@@ -8,6 +8,7 @@ filetype off
 
 set nowrap
 set number
+set cursorline
 
 " Tabstops are 4 spaces
 set tabstop=4
@@ -82,13 +83,6 @@ set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 set guioptions=ac
 
 " This is the timeout used while waiting for user input on a multi-keyed macro
-" or while just sitting and waiting for another key to be pressed measured
-" in milliseconds.
-"
-" i.e. for the ",d" command, there is a "timeoutlen" wait period between the
-"      "," key and the "d" key.  If the "d" key isn't pressed before the
-"      timeout expires, one of two things happens: The "," command is executed
-"      if there is one (which there isn't) or the command aborts.
 set timeoutlen=500
 
 " Keep some stuff in the history
@@ -136,13 +130,6 @@ set hlsearch
 
 " Incrementally match the search
 set incsearch
-
-" Initial path seeding
-set path=
-set path+=~/code/**
-
-" Set the tags files to be the following
-set tags=./tags,tags
 
 " Let the syntax highlighting for Java files allow cpp keywords
 let java_allow_cpp_keywords = 1
@@ -256,27 +243,6 @@ set synmaxcol=2048
 let loaded_matchparen = 1
 
 "-----------------------------------------------------------------------------
-" NERD Tree Plugin Settings
-"-----------------------------------------------------------------------------
-" Toggle the NERD Tree on an off with F7
-nmap <F7> :NERDTreeToggle<CR>
-
-" Close the NERD Tree with Shift-F7
-nmap <S-F7> :NERDTreeClose<CR>
-
-" Store the bookmarks file in perforce
-let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
-
-" Show the bookmarks table on startup
-let NERDTreeShowBookmarks=1
-
-" Don't display these kinds of files
-let NERDTreeIgnore=[ '\.ncb$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
-            \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$',
-            \ '\.embed\.manifest$', '\.embed\.manifest.res$',
-            \ '\.intermediate\.manifest$', '^mt.dep$' ]
-
-"-----------------------------------------------------------------------------
 " SnipMate Settings
 "-----------------------------------------------------------------------------
 function! ListKnownSnippetLanguageTypes(A, L, P)
@@ -310,16 +276,12 @@ command! -complete=customlist,ListKnownSnippetLanguageTypes
 " CommandT Settings
 "-----------------------------------------------------------------------------
 nmap <leader>t :CommandT<CR>
+nmap <leader>b :CommandTBuffer<CR>
 
 "-----------------------------------------------------------------------------
 " ShowMarks Plugin Stuff
 "-----------------------------------------------------------------------------
 let g:loaded_showmarks = 1
-
-"-----------------------------------------------------------------------------
-" MiniBufExplorer Plugin Settings
-"-----------------------------------------------------------------------------
-let loaded_minibufexplorer = 1
 
 "-----------------------------------------------------------------------------
 " Functions
@@ -343,6 +305,11 @@ augroup Binary
     au BufWritePre  *.bin endif
     au BufWritePost *.bin if &bin | %!xxd
     au BufWritePost *.bin set nomod | endif
+augroup END
+
+augroup fileTypes
+  au!
+  au FileType ruby,haml,eruby,yaml,html,javascript set ai sw=2 sts=2 et
 augroup END
 
 "-----------------------------------------------------------------------------
