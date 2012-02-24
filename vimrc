@@ -279,14 +279,8 @@ nmap <leader>t :CommandT<CR>
 nmap <leader>b :CommandTBuffer<CR>
 
 "-----------------------------------------------------------------------------
-" ShowMarks Plugin Stuff
-"-----------------------------------------------------------------------------
-let g:loaded_showmarks = 1
-
-"-----------------------------------------------------------------------------
 " Functions
 "-----------------------------------------------------------------------------
-
 function! RunSystemCall(systemcall)
     let output = system(a:systemcall)
     let output = substitute(output, "\n", '', 'g')
@@ -315,7 +309,6 @@ augroup END
 "-----------------------------------------------------------------------------
 " Fix constant spelling mistakes
 "-----------------------------------------------------------------------------
-
 iab teh       the
 iab Teh       The
 iab taht      that
