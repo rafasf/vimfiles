@@ -1,10 +1,5 @@
-set nocompatible
-
-" Pathogen magic
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#runtime_append_all_bundles()
-
-filetype off
+" Loads vundle
+source $HOME/.vim/vundle
 
 set nowrap
 set number
@@ -15,12 +10,14 @@ set tabstop=4
 set shiftwidth=4
 
 " Set background to dark -- better visualization on terminal
-set background=dark
+set background=light
 
 " Set filetype stuff to on
 filetype on
 filetype plugin on
-filetype indent on
+
+" Switch on syntax highlighting.
+syntax on
 
 " set the search scan to wrap lines
 set wrapscan
@@ -65,22 +62,8 @@ set showcmd
 " Show the current mode
 set showmode
 
-" Switch on syntax highlighting.
-syntax on
-
 " Hide the mouse pointer while typing
 set mousehide
-
-" Set up the gui cursor to look nice
-set guicursor=n-v-c:block-Cursor-blinkon0
-set guicursor+=ve:ver35-Cursor
-set guicursor+=o:hor50-Cursor
-set guicursor+=i-ci:ver25-Cursor
-set guicursor+=r-cr:hor20-Cursor
-set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
-
-" set the gui options the way I like
-set guioptions=ac
 
 " This is the timeout used while waiting for user input on a multi-keyed macro
 set timeoutlen=500
@@ -303,7 +286,7 @@ augroup END
 
 augroup fileTypes
   au!
-  au FileType ruby,haml,eruby,yaml,html,javascript set ai sw=2 sts=2 et
+  au FileType ruby,haml,eruby,yaml,html,javascript,coffee set ai sw=2 sts=2 et
 augroup END
 
 "-----------------------------------------------------------------------------
@@ -345,5 +328,5 @@ if has("gui_running")
     set guifont=Monaco:h13
     colorscheme solarized
 else
-    colorscheme ir_black
+    colorscheme solarized
 endif

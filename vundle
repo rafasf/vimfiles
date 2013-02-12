@@ -1,0 +1,22 @@
+" vim: syntax=vim
+
+set nocompatible
+filetype off
+
+set rtp+=$HOME/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle "vim-scripts/matchit.zip"
+Bundle 'tpope/vim-fugitive'
+Bundle "tpope/vim-surround"
+Bundle "godlygeek/tabular"
+Bundle "tomasr/molokai"
+Bundle "altercation/vim-colors-solarized"
+Bundle "vim-scripts/ZenCoding.vim"
+Bundle "vim-ruby/vim-ruby"
+Bundle "vim-scripts/VimClojure"
+Bundle "wincent/Command-T"
+
+filetype plugin indent on     " required!
