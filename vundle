@@ -3,7 +3,7 @@
 set nocompatible
 filetype off
 
-set rtp+=$HOME/.vim/bundle/vundle/
+set rtp+=$HOME/.vim/autoload/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
