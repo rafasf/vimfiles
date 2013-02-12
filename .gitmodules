@@ -1,3 +1,3 @@
-[submodule "bundle/vundle"]
-	path = bundle/vundle
+[submodule "autoload/vundle"]
+	path = autoload/vundle
 	url = https://github.com/gmarik/vundle.git
