@@ -84,6 +84,9 @@ set virtualedit=all
 " These things start comment lines
 set comments=sl:/*,mb:\ *,ex:\ */,O://,b:#,:%,:XCOMM,n:>,fb:-
 
+" Files/Directories to be ignored on completion
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 " Disable encryption (:X)
 set key=
 
@@ -256,10 +259,10 @@ command! -complete=customlist,ListKnownSnippetLanguageTypes
          \ -nargs=? RS call ReloadSnippets("<args>")
 
 "-----------------------------------------------------------------------------
-" CommandT Settings
+" CtrlP Settings
 "-----------------------------------------------------------------------------
-nmap <leader>t :CommandT<CR>
-nmap <leader>b :CommandTBuffer<CR>
+nmap <leader>t :CtrlP<CR>
+nmap <leader>b :CtrlPBuffer<CR>
 
 "-----------------------------------------------------------------------------
 " Functions
