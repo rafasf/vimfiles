@@ -31,7 +31,7 @@ set smartcase
 set shellslash
 
 " Make command line two lines high
-set ch=2
+set ch=1
 
 " set visual bell 
 set vb
