@@ -289,7 +289,7 @@ augroup END
 
 augroup fileTypes
   au!
-  au FileType ruby,haml,eruby,yaml,html,javascript,coffee set ai sw=2 sts=2 et
+  au FileType ruby,haml,eruby,yaml,html,javascript,coffee,groovy set ai sw=2 sts=2 et
 augroup END
 
 "-----------------------------------------------------------------------------
