@@ -2,7 +2,7 @@
 source $HOME/.vim/vundle
 
 set nowrap
-set number
+set nonumber
 set cursorline
 
 " Tabstops are 4 spaces
