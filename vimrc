@@ -327,6 +327,7 @@ iab Fone      Phone
 "-----------------------------------------------------------------------------
 " Set up the window colors and size
 "-----------------------------------------------------------------------------
+let g:solarized_termcolors=256
 if has("gui_running")
     set guifont=Monaco:h13
     colorscheme solarized
