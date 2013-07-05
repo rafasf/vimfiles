@@ -19,5 +19,6 @@ Bundle "vim-ruby/vim-ruby"
 Bundle "vim-scripts/VimClojure"
 Bundle "tpope/vim-markdown"
 Bundle "kien/ctrlp.vim"
+Bundle "rodjek/vim-puppet"
 
 filetype plugin indent on     " required!
