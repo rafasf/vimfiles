@@ -86,6 +86,11 @@ set comments=sl:/*,mb:\ *,ex:\ */,O://,b:#,:%,:XCOMM,n:>,fb:-
 
 " Files/Directories to be ignored on completion
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = 'node_modules\|components'
+
+" Shows unwanted chars
+set list
+set listchars=tab:→\ ,trail:.
 
 " Disable encryption (:X)
 set key=
@@ -289,7 +294,7 @@ augroup END
 
 augroup fileTypes
   au!
-  au FileType ruby,haml,eruby,yaml,html,javascript,coffee,groovy set ai sw=2 sts=2 et
+  au FileType ruby,haml,eruby,yaml,html,javascript,coffee,groovy,less set ai sw=2 sts=2 et
 augroup END
 
 "-----------------------------------------------------------------------------
