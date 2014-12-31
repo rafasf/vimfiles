@@ -3,11 +3,10 @@ source $HOME/.vim/vundle
 
 set nowrap
 set nonumber
-set cursorline
 
 " Tabstops are 4 spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " Set background to dark -- better visualization on terminal
 set background=light
@@ -33,7 +32,7 @@ set shellslash
 " Make command line two lines high
 set ch=1
 
-" set visual bell 
+" set visual bell
 set vb
 
 " Allow backspacing over indent, eol, and the start of an insert
@@ -86,7 +85,7 @@ set comments=sl:/*,mb:\ *,ex:\ */,O://,b:#,:%,:XCOMM,n:>,fb:-
 
 " Files/Directories to be ignored on completion
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = 'node_modules\|components'
+let g:ctrlp_custom_ignore = 'node_modules\|components\|dist\|out\|build'
 
 " Shows unwanted chars
 set list
@@ -126,7 +125,7 @@ set incsearch
 let java_allow_cpp_keywords = 1
 
 " Change leader key to comma
-let mapleader="," 
+let mapleader=","
 
 " Toggle paste mode
 nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
@@ -232,36 +231,6 @@ set synmaxcol=2048
 
 " I don't like it when the matching parens are automatically highlighted
 let loaded_matchparen = 1
-
-"-----------------------------------------------------------------------------
-" SnipMate Settings
-"-----------------------------------------------------------------------------
-function! ListKnownSnippetLanguageTypes(A, L, P)
-    let filesanddirs = split(globpath(g:snippets_dir, a:A . "*"), "\n")
-    let dirsonly = []
-    for f in filesanddirs
-        if isdirectory(f)
-            let each = split(f, '/')
-            let dirsonly = add(dirsonly, each[-1])
-        end
-    endfor
-    return dirsonly
-endfunction
-
-function! ReloadSnippets(type)
-    call ResetSnippets()
-    if a:type != ""
-        call ExtractSnips(g:snippets_dir . a:type, a:type)
-    else
-        let alltypes = ListKnownSnippetLanguageTypes("", "", "")
-        for type in alltypes
-            call ExtractSnips(g:snippets_dir . type, type)
-        endfor
-    endif
-endfunction
-
-command! -complete=customlist,ListKnownSnippetLanguageTypes
-         \ -nargs=? RS call ReloadSnippets("<args>")
 
 "-----------------------------------------------------------------------------
 " CtrlP Settings
