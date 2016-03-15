@@ -85,7 +85,7 @@ set comments=sl:/*,mb:\ *,ex:\ */,O://,b:#,:%,:XCOMM,n:>,fb:-
 
 " Files/Directories to be ignored on completion
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = 'node_modules\|components\|dist\|out\|build'
+let g:ctrlp_custom_ignore = 'node_modules\|dist\|out\|build\|bundle'
 
 " Shows unwanted chars
 set list
@@ -239,6 +239,38 @@ nmap <leader>t :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 
 "-----------------------------------------------------------------------------
+" Rainbow
+"-----------------------------------------------------------------------------
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+"-----------------------------------------------------------------------------
+" JSX
+"-----------------------------------------------------------------------------
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+"-----------------------------------------------------------------------------
 " Functions
 "-----------------------------------------------------------------------------
 function! RunSystemCall(systemcall)
@@ -264,6 +296,7 @@ augroup END
 augroup fileTypes
   au!
   au FileType ruby,haml,eruby,yaml,html,javascript,coffee,groovy,less set ai sw=2 sts=2 et
+  au FileType gradle set ai sw=2 sts=2 ft=groovy et
 augroup END
 
 "-----------------------------------------------------------------------------
@@ -301,8 +334,8 @@ iab Fone      Phone
 "-----------------------------------------------------------------------------
 " Set up the window colors and size
 "-----------------------------------------------------------------------------
-let base16colorspace=256
 let g:solarized_termcolors=256
+
 if has("gui_running")
     set guifont=Monaco:h13
     colorscheme solarized
