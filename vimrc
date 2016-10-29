@@ -11,6 +11,9 @@ set shiftwidth=2
 " Set background to dark -- better visualization on terminal
 set background=light
 
+" Highlight current line
+:set cursorline
+
 " Set filetype stuff to on
 filetype on
 filetype plugin on
@@ -90,9 +93,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|dist\|out\|build\|bundle'
 " Shows unwanted chars
 set list
 set listchars=tab:→\ ,trail:.
-
-" Disable encryption (:X)
-set key=
 
 " Make the command-line completion better
 set wildmenu
@@ -241,6 +241,7 @@ nmap <leader>b :CtrlPBuffer<CR>
 "-----------------------------------------------------------------------------
 " Rainbow
 "-----------------------------------------------------------------------------
+let g:rainbow_active = 1
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -269,6 +270,11 @@ au Syntax * RainbowParenthesesLoadBraces
 " JSX
 "-----------------------------------------------------------------------------
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+"-----------------------------------------------------------------------------
+" vim-markdown
+"-----------------------------------------------------------------------------
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'java']
 
 "-----------------------------------------------------------------------------
 " Functions
