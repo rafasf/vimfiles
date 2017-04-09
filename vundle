@@ -9,7 +9,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Nice utilities
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
@@ -24,6 +25,7 @@ Plugin 'tpope/vim-dispatch'
 " Syntax highlighting
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-markdown'
 Plugin 'rodjek/vim-puppet'
 Plugin 'groenewege/vim-less'
@@ -34,11 +36,11 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'wting/rust.vim'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'lambdatoast/elm.vim'
+Plugin 'fatih/vim-go'
+Plugin 'elmcast/elm-vim'
 
 " Colorschemes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'twerth/ir_black'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 filetype plugin indent on
