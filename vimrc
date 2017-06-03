@@ -259,6 +259,20 @@ nmap <leader>m :NERDTreeToggle<CR>
 let g:elm_format_autosave = 1
 
 "-----------------------------------------------------------------------------
+" typescript-vim
+"-----------------------------------------------------------------------------
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+"-----------------------------------------------------------------------------
+" vim-js-pretty-template
+"-----------------------------------------------------------------------------
+autocmd FileType typescript JsPreTmpl html
+autocmd FileType typescript syn clear foldBraces
+
+"-----------------------------------------------------------------------------
 " Functions
 "-----------------------------------------------------------------------------
 function! RunSystemCall(systemcall)
