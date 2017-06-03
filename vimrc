@@ -2,7 +2,7 @@
 source $HOME/.vim/vundle
 
 set nowrap
-set nonumber
+set number
 
 " Tabstops are 4 spaces
 set tabstop=2
