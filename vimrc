@@ -272,6 +272,15 @@ autocmd QuickFixCmdPost    l* nested lwindow
 autocmd FileType typescript JsPreTmpl html
 autocmd FileType typescript syn clear foldBraces
 
+
+"-----------------------------------------------------------------------------
+" vim-prettier
+"-----------------------------------------------------------------------------
+let g:prettier#config#bracket_spacing = 'false'
+let g:prettier#autoformat = 0
+
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+
 "-----------------------------------------------------------------------------
 " Functions
 "-----------------------------------------------------------------------------
@@ -342,5 +351,5 @@ if has("gui_running")
     set guifont=Monaco:h13
     colorscheme solarized
 else
-    colorscheme solarized
+    colorscheme ir_black
 endif

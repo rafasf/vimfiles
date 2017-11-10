@@ -19,7 +19,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'tpope/vim-dispatch'
-
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'prettier/vim-prettier'
 
 " Syntax highlighting
 Plugin 'othree/yajs.vim'
