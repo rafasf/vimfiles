@@ -28,6 +28,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'mxw/vim-jsx'
 Plugin 'elmcast/elm-vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
