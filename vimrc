@@ -9,7 +9,7 @@ set tabstop=2
 set shiftwidth=2
 
 " Set background to dark -- better visualization on terminal
-set background=light
+set background=dark
 
 " Highlight current line
 :set cursorline
@@ -104,7 +104,7 @@ set complete=.,w,b,t
 set showfulltag
 
 " Set the textwidth to be 120 chars
-set textwidth=120
+set textwidth=80
 
 " get rid of the silly characters in window separators
 set fillchars=""
@@ -347,9 +347,6 @@ iab Fone      Phone
 "-----------------------------------------------------------------------------
 let g:solarized_termcolors=256
 
-if has("gui_running")
-    set guifont=Monaco:h13
-    colorscheme solarized
-else
-    colorscheme ir_black
-endif
+colorscheme onehalfdark
+
+let g:airline_theme='onehalfdark'
